@@ -1,0 +1,123 @@
+.services-item-persp {
+  width: 30%;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+  margin-bottom: 60px;
+}
+.services-item {
+  user-select: none;
+  transition: transform 0.6s;
+  text-align: center;
+  letter-spacing: 0.02em;
+  color: #fff;
+  padding: 20px;
+  border-radius: 20px;
+}
+.services-item-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+.services-top-left {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  img {
+    margin-right: 6px;
+    max-height: 100%;
+    filter: brightness(100);
+  }
+}
+.services-top-right {
+  font-size: 12px;
+  padding: 8px 23px;
+  border-radius: 25px;
+  background: linear-gradient(180deg, #ffe177 0%, #feb137 100%);
+  margin-right: -40px;
+}
+.services-item-title {
+  font-size: 27px;
+  text-transform: capitalize;
+  margin-bottom: 18px;
+  font-weight: 600;
+}
+.services-item-text {
+  margin-bottom: 45px;
+}
+.btn__services {
+  background: #fff;
+  padding: 10px 50px;
+  &:hover {
+    text-shadow: 0px 0px 6px #a8cfc9;
+  }
+}
+
+.gradient-blue {
+  .services-item {
+    background: rgb(1, 208, 251);
+    background: linear-gradient(
+      220deg,
+      rgba(1, 208, 251, 1) 0%,
+      rgba(38, 166, 254, 1) 68%,
+      rgba(1, 130, 252, 1) 100%
+    );
+  }
+  .btn__services {
+    color: #0182fc;
+  }
+}
+.gradient-orange {
+  .services-item {
+    background: linear-gradient(
+      90deg,
+      #fe8a6b 0.31%,
+      #fb6138 58.57%,
+      #ec5d36 98.55%
+    );
+  }
+  .btn__services {
+    color: #ef5e37;
+  }
+}
+.gradient-green {
+  .services-item {
+    background: linear-gradient(45deg, #44a85f 0%, #48d16e 100%);
+  }
+  .btn__services {
+    color: #44ab61;
+  }
+}
+.gradient-lilac {
+  .services-item {
+    background: linear-gradient(237.11deg, #bb6bd9 3.48%, #a752c7 100%);
+  }
+  .btn__services {
+    color: #a955c9;
+  }
+}
+
+.gradient-purple {
+  .services-item {
+    background: linear-gradient(239.98deg, #967fbc 0%, #745c9f 97.99%);
+  }
+  .btn__services {
+    color: #765ea1;
+  }
+}
+.gradient-violet {
+  .services-item {
+    background: linear-gradient(
+      237.2deg,
+      #929cff 0%,
+      #737ff1 59.3%,
+      #6f79df 100%
+    );
+  }
+  .btn__services {
+    color: #707be4;
+  }
+}
+
+

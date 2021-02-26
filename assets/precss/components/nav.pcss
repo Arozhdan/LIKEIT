@@ -1,0 +1,88 @@
+$orange: #fb6138;
+$gray: #444444;
+
+
+/* TODO: HOVER BUG 
+ANCHOR  */
+
+
+.nav__link {
+  @apply font-semibold text-white block cursor-pointer whitespace-nowrap capitalize;
+}
+.nav__link--programs {
+  position: relative;
+  padding-right: 15px;
+  &::before {
+    transition: all 0.2s linear;
+    position: absolute;
+    display: block;
+    content: "";
+    width: 10px;
+    height: 5px;
+    background-image: url("../../images/icons/down.svg");
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+.nav__link--programs:hover {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  background-color: #fff;
+  color: $orange;
+  padding: 10px 15px 5px;
+  margin: -10px -15px -5px 35px;
+  transform:translateX(-15px);
+  .nav__link__popup {
+    visibility: visible;
+    opacity: 1;
+  }
+  &::before {
+    display: none;
+  }
+}
+.nav__link + .nav__link {
+  margin-left: 50px;
+}
+.nav__link__popup {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  top: 39px;
+  left: 0;
+  width: 450px;
+  padding: 38px 42px;
+  background-color: #fff;
+  border-radius: 25px;
+  border-top-left-radius: 0;
+  &:hover{
+    visibility: visible;
+    opacity: 1;
+  }
+  &__group:nth-of-type(n+3){
+      margin-top: 32px;
+  }
+  &__title{
+      color: $gray;
+      opacity: 0.85;
+      font-size: 12px;
+  }
+  &__title:hover{
+    color: $orange;
+  }
+  &__courses{
+      margin-top: 16px;
+      padding-left: 30px;
+      font-size: 12px;
+      color: #000;
+  }
+  &__course{
+      transition:all 0.3s ease;
+  }
+  &__course:hover{
+      opacity: 0.4;
+  }
+  &__course + &__course {
+    margin-top: 10px;
+  }
+}

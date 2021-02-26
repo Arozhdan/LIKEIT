@@ -1,0 +1,104 @@
+.price-card {
+  width: 30%;
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease-out;
+  will-change: transform;
+  &__inner {
+    z-index: 1;
+    position: absolute;
+    left: 35px;
+    right: 35px;
+    top: 20px;
+    will-change: transform;
+  }
+  &__subtitle,
+  &__subtitle b {
+    transition: all 0.3s ease;
+    transition-delay: 0.3s;
+  }
+  &__list {
+    @apply text-gray-500;
+    z-index: 1;
+    transition: all 0.3s ease;
+    transition-delay: 0.4s;
+  }
+  &__button {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+    font-weight: bold;
+    border-radius: 65px;
+    padding: 15px 55px;
+    color: #fff;
+    transition: all 0.3s ease 0s;
+    background: linear-gradient(
+      90deg,
+      #fe8a6b 0.31%,
+      #fb6138 58.57%,
+      #ec5d36 98.55%
+    );
+  }
+  &__list li {
+    padding-left: 30px;
+    position: relative;
+  }
+  &__list li + li {
+    margin-top: 20px;
+  }
+  &__list li::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: #ccc;
+    left: 0;
+    top: 8px;
+  }
+  &__mask {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background: linear-gradient(248.11deg, #917ab8 1.97%, #7760a2 100%);
+    left: 0;
+    top: 0;
+    z-index: 0;
+    will-change: transform;
+  }
+  &__copy {
+    visibility: hidden;
+  }
+}
+.price-card:hover {
+  transform: scale(1.03);
+  .price-card__subtitle,
+  .price-card__subtitle b {
+    color: #fff;
+  }
+  .price-card__list {
+    color: #fff;
+    opacity: 0.9;
+  }
+  .price-card__button {
+    animation: btn 1s ease-in-out 0s 1 normal forwards;
+  }
+}
+@keyframes btn {
+  25% {
+    background-color: #f36037;
+  }
+  50% {
+    color: #7962a3;
+  }
+  85% {
+    color: #7962a3;
+    background: #fff;
+  }
+  100% {
+    color: #7962a3;
+    background: #fff;
+    opacity: 1;
+  }
+}
