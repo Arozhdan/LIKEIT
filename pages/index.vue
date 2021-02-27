@@ -154,7 +154,7 @@
         </div>
       </div>
     </div>
-    <div class="plank py-5">
+    <div class="plank py-7">
       <div class="container flex items-center">
         <div class="text-white w-72 -mx-6">
           <img src="../assets/images/plank-doggy.png" alt="doggy">
@@ -544,7 +544,7 @@
         </div>
       </div>
     </div>
-    <div class="plank py-5 plank--promo">
+    <div class="plank py-10 plank--promo">
       <div class="container flex items-center">
         <div class="text-white w-72 -mx-6">
           <img src="../assets/images/promo-doggy.png" alt="doggy">
@@ -565,13 +565,49 @@
       </div>
     </div>
     <div class="reserve py-32">
-      <div class="container">
-        1
+      <div class="container flex items-center justify-center">
+        <form class="form form--contacts bg-white rounded-xl py-11 px-10 w-4/12">
+          <label>
+            <span class="hidden"> Имя и возраст ребенка</span>
+            <input class="py-4 px-6 border border-gray-400 text-gray-700 w-full rounded" placeholder="Возраст и Имя ребенка" type="text">
+          </label>
+          <label class="mt-5 block">
+            <span class="hidden"> Телефон родителя</span>
+            <input class="py-4 px-6 border border-gray-400 text-gray-700 w-full rounded" placeholder="Телефон родителя" type="text">
+          </label>
+          <label class="mt-5 block">
+            <span class="hidden"> Имя и Отчество родителя</span>
+            <input class="py-4 px-6 border border-gray-400 text-gray-700 w-full rounded" placeholder="Имя и Отчество родителя" type="text">
+          </label>
+          <CustomCheckbox class="mt-4 mb-7" />
+          <button class="contacts-btn w-full">
+            Оставить заявку
+          </button>
+        </form>
+        <div class="w-4/12 ml-16">
+          <div class="text-3xl font-semibold mb-6">
+            Остались вопросы?
+          </div>
+          <div class="more-qestions">
+            <div class="text-lg font-semibold mb-7 ">
+              Оставьте заявку
+            </div>
+            <div class="mb-6">
+              Наш менеджер позвонит Вам с 9:00 до 21:00 по МСК или на следующий день, если заявка отправлена в ночное время
+            </div>
+            <div>
+              Менеджер ответит на все Ваши вопросы, ппожберет оптимальный план обучения и назначит вводное занятие
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 <script>
+import Footer from '../components/Footer.vue'
+import CustomCheckbox from '../components/CustomCheckbox.vue'
 import Collapse from '../components/Collapse.vue'
 import PriceCard from '../components/PriceCard.vue'
 import CourseCard from '../components/CourseCard.vue'
@@ -580,7 +616,7 @@ import '../assets/precss/components/homepage.pcss'
 import '../assets/precss/components/benefitsSplide.pcss'
 import '../assets/precss/components/price.pcss'
 export default {
-  components: { CourseCard, PriceCard, Collapse },
+  components: { CourseCard, PriceCard, Collapse, CustomCheckbox, Footer },
   data () {
     return {
       sliderOptions: {

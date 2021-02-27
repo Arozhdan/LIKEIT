@@ -15,7 +15,7 @@
         консультацию и получите цену
       </p>
       <div
-        class="text-red-400 text-5xl font-semibold text-center border-b-2 pb-9 mb-9"
+        class="price-card__amount text-red-400 text-5xl font-semibold text-center border-b-2 pb-9 mb-9"
       >
         6 500 ₽
       </div>

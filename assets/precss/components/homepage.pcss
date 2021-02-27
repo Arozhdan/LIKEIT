@@ -243,3 +243,60 @@
 .reserve {
   background: #f0fbfd;
 }
+
+.form--contacts {
+  input {
+    display: block;
+  }
+  input::placeholder {
+    @apply text-gray-400;
+    font-family: inherit;
+  }
+  label + label {
+    margin-top: 20px;
+  }
+}
+.contacts-btn {
+  transition: all 0.3s ease;
+  &:hover {
+    cursor: pointer;
+    text-shadow: 0px 0px 6px white;
+  }
+  @apply rounded-3xl font-bold text-white whitespace-nowrap;
+  transition: all 0.4s ease 0s;
+  background: linear-gradient(225deg, #69d2e7 0%, #1cb3d1 100%);
+  padding: 15px 40px;
+}
+
+.more-qestions {
+  position: relative;
+  &::before {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 2px;
+    height: 80%;
+    background-image: url('../../images/icons/contact-line.svg');
+    left: 6.5px;
+    top: 45%;
+    transform: translateY(-50%);
+  }
+
+  /*  */
+  > div {
+    padding-left: 26px;
+    position: relative;
+  }
+  > div::after {
+    position: absolute;
+    display: block;
+    content: "";
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: #69d2e7;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
