@@ -11,12 +11,16 @@
     "lint": "npm run lint:js"
   },
   "dependencies": {
+    "@nuxtjs/strapi": "^0.3.0",
     "@splidejs/vue-splide": "^0.3.5",
+    "axios": "^0.21.1",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12",
     "precss": "^4.0.0",
+    "uuid": "^8.3.2",
     "vue-custom-scrollbar": "^1.4.0",
-    "vue-gallery": "^2.0.1"
+    "vue-gallery": "^2.0.1",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^5.0.0",

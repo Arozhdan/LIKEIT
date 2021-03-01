@@ -29,9 +29,11 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
+    '~filters/nl2br.js',
     { src: '~/plugins/vue-gallery.js', ssr: false },
     { src: '~/plugins/vue-scroll.js', ssr: false },
-    { src: '~/plugins/slider.js', ssr: false }
+    { src: '~/plugins/slider.js', ssr: false },
+    { src: '~/plugins/vuelidate.js' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -46,8 +48,16 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/strapi'
   ],
-
+  strapi: {
+    entities: ['homepage', 'courses', 'categories', 'ages', 'testimonials', 'prices', 'site-settings', 'leads'],
+    url: 'https://school.likeit.website'
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
-  build: {}
+  build: {},
+  env: {
+    NODE_TLS_REJECT_UNAUTHORIZED: 0,
+    strapiBaseUri: process.env.API_URL || 'https://school.likeit.website'
+  }
 }

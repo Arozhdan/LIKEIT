@@ -21,6 +21,12 @@ export default {
 
       }
     }
+  },
+  mounted () {
+    (function (w, d, u) {
+      const s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0)
+      const h = d.getElementsByTagName('script')[0]; h.parentNode.insertBefore(s, h)
+    })(window, document, 'https://cdn-ru.bitrix24.ru/b16923550/crm/site_button/loader_1_a0xwvi.js')
   }
 }
 </script>
