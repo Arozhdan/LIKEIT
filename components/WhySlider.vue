@@ -45,7 +45,9 @@
     </SplideSlide>
     <template #controls>
       <div class="splide__progress">
-        <div class="splide__progress__bar" />
+        <div class="splide__pagination">
+          <div class="splide__progress__bar" />
+        </div>
       </div>
       <div class="splide__arrows">
         <button class="splide__arrow splide__arrow--prev">

@@ -4,7 +4,7 @@
     <div class="homepage-header__wrapper">
       <div class="homepage-header mt-32 container flex">
         <div class="homepage-header__left w-8/12">
-          <p class="homepage-header__subtitle">
+          <p class="homepage-header__subtitle inline-block">
             онлайн-школа информационных технологий
           </p>
           <h1 class="homepage-header__title">
