@@ -1,0 +1,174 @@
+.course-page {
+  background-color: #fffbfc;
+  .homepage-header__wrapper {
+    background-position: center;
+    background-image: url("../../images/icons/prog-details.svg");
+    padding-bottom: 140px;
+    background-size: cover;
+    .button__primary {
+      background: linear-gradient(248.11deg, #917ab8 1.97%, #7760a2 100%);
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 150%;
+      letter-spacing: 0.02em;
+      border-radius: 45px;
+    }
+  }
+  .homepage-header__title {
+    @apply text-gray-900 mb-4;
+    font-size: 44px;
+    letter-spacing: 0.02em;
+    line-height: 60px;
+  }
+  .homepage-header__suptitle {
+    @apply text-gray-700 w-1/2;
+  }
+}
+.goals {
+  background-color: #fffbfc;
+}
+.goal-card {
+  @apply shadow-md;
+  border-radius: 20px;
+  overflow: hidden;
+  max-width: 360px;
+  .line {
+    margin-left: -32px;
+    margin-right: -32px;
+    border-radius: 20px 20px 0px 0px;
+  }
+}
+.goal-card {
+  &--1 .line {
+    background: linear-gradient(180deg, #ffe177 0%, #feb137 100%);
+  }
+  &--2 .line {
+    background: linear-gradient(222.59deg, #61d581 -2.46%, #45ae62 100%);
+  }
+  &--3 .line {
+    background: linear-gradient(
+      237.2deg,
+      #929cff 0%,
+      #737ff1 59.3%,
+      #6f79df 100%
+    );
+  }
+  &--4 .line {
+    background: linear-gradient(
+      90deg,
+      #fe8a6b 0.31%,
+      #fb6138 58.57%,
+      #ec5d36 98.55%
+    );
+  }
+}
+.project-work {
+  background: linear-gradient(
+    90deg,
+    #fe8a6b 0.31%,
+    #fb6138 58.57%,
+    #ec5d36 98.55%
+  );
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 50px;
+  span{
+    font-weight: 400;
+  }
+}
+.suitable__card {
+  width: 20%;
+  max-width: 280px;
+  &__img {
+    background: linear-gradient(248.11deg, #917ab8 1.97%, #7760a2 100%);
+  }
+}
+.works-cards {
+  margin-top: 90px;
+}
+.work-img {
+  width: 24%;
+  max-width: 280px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  @apply shadow-md transition duration-300 hover:shadow-lg;
+  &:hover {
+    transform: scale(1.02);
+  }
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    display: block;
+  }
+}
+.work-card {
+  width: 280px;
+  height: 280px;
+  padding: 71px 27px 50px;
+  border: 2px solid #ec5d36;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+.works-top-right {
+  background: linear-gradient(248.11deg, #917ab8 1.97%, #7760a2 100%);
+  border-radius: 10px;
+}
+.works-top-right__img-wrapper {
+  position: relative;
+  left: -40%;
+  top: -120px;
+}
+.works-top-img {
+  position: absolute;
+  width: 390px;
+  height: 320px;
+  cursor: pointer;
+  border-radius: 10px;
+  background-size: cover;
+  background-position: center;
+}
+.study-process {
+  &__card {
+    width: 21%;
+  }
+  &__num {
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    font-size: 45px;
+  }
+  &__num--1 {
+    background-color: #69d2e7;
+    img {
+      margin-left: -4px;
+    }
+  }
+  &__num--2 {
+    background: #fb7956;
+  }
+  &__num--3 {
+    background: #ffda6e;
+  }
+  &__num--4 {
+    background: #9d87c3;
+  }
+}
+.course-stat{
+  background: linear-gradient(248.11deg, #917AB8 1.97%, #7760A2 100%);
+  &__card{
+    width: 30%;
+    max-width:360px;
+  }
+  &__icon{
+    background: linear-gradient(248.11deg, #917AB8 1.97%, #7760A2 100%);
+    border-radius:50%;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+}

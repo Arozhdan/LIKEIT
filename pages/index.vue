@@ -2,17 +2,13 @@
 <template>
   <div class="page homepage ">
     <div class="homepage-header__wrapper">
-      <div class="homepage-header mt-32 container flex">
-        <div class="homepage-header__left w-8/12">
-          <p class="homepage-header__subtitle inline-block">
-            онлайн-школа информационных технологий
-          </p>
+      <div class="homepage-header mt-32 mb-36 container flex">
+        <div class="homepage-header__left w-9/12">
           <h1 class="homepage-header__title">
-            Пусть ваш ребенок проведет время с пользой
+            Онлайн-школа <br> информационных технологий
           </h1>
           <p class="homepage-header__suptitle">
-            Постройте своё, удобное для вас, расписание. <br>
-            Больше не нужно подстраиваться под уроки!
+            Пусть ваш ребенок проведет время с пользой
           </p>
           <button
             href="#"
@@ -20,11 +16,6 @@
           >
             Начать учиться
           </button>
-          <p class="homepage-header__links flex">
-            LikeIT school в соц. сетях
-            <img src="../assets/images/icons/vk.svg" alt="vk">
-            <img src="../assets/images/icons/instagram.svg" alt="instagram">
-          </p>
         </div>
       </div>
       <div class="advantages-wrapper">
@@ -62,7 +53,7 @@
         >
           <div class="benefits__item__left w-7/12">
             <h3 class="text-gray-900 font-semibold text-2xl">
-              {{ benefit.title }}
+              {{ benefit.titile }}
             </h3>
             <p class="mt-2 text-gray-700 text-lg pr-6">
               {{ benefit.text }}
@@ -87,7 +78,7 @@
           для успешного обучения ваших детей, помогая при этом развивать их
           аналитический склад ума, тврочество и поддерживая интерес.
         </p>
-        <div class="flex justify-center my-3">
+        <div class="flex justify-center mt-8 mb-2">
           <button class="button button--secondary">
             Начать учиться
           </button>
@@ -104,7 +95,7 @@
         программ, а также в летних лагерях для семей, живущих в большей
         местности.
       </p>
-      <p class="section-subtitle py-16">
+      <p class="section-subtitle py-10">
         Здесь вы найдете исключительных учителей, учебную программу и учебную
         среду, которая побуждает детей учиться, играть и исследовать в
         безопасной, здоровой и благоприятной среде, способствующей творческому
@@ -117,7 +108,7 @@
           Программы и курсы LikeIT school
         </h2>
         <div class="courses-wrapper flex justify-between flex-wrap mt-16">
-          <CourseCard v-for="i in 6" :key="i" />
+          <CourseCard v-for="course in courses.courses" :key="course.id" :content="course" />
         </div>
       </div>
     </div>
@@ -264,9 +255,6 @@
             <button class="callout-button">
               Получить консультацию
             </button>
-            <button class="callout-button--transparent">
-              Получить консультацию
-            </button>
           </div>
         </div>
       </div>
@@ -350,7 +338,8 @@ export default {
       },
       homepage: {},
       prices: [],
-      error: null
+      error: null,
+      courses: []
     }
   },
   head () {
@@ -369,11 +358,24 @@ export default {
   async mounted () {
     try {
       this.homepage = await this.$strapi.$homepage.find()
-    } catch (error) {
-      this.error = error
-    }
-    try {
       this.prices = await this.$strapi.$prices.find()
+      this.courses = await this.$strapi.graphql({
+        query: `
+        query{
+          courses{
+            id
+            title
+            description
+            color
+            category{
+              name
+            }
+            age{
+              number
+            }
+          }
+        }`
+      })
     } catch (error) {
       this.error = error
     }

@@ -1,22 +1,22 @@
 <template>
-  <div class="services-item-persp gradient-blue">
+  <div class="services-item-persp" :class="'gradient-'+content.color">
     <div class="services-item services-item__1">
       <div class="services-item-top">
         <div class="services-top-left">
           <img src="../assets/images/icons/vector.svg" alt="">
-          <span class="services-top-category">design </span>
+          <span class="services-top-category">{{ content.category.name }} </span>
         </div>
-        <span class="services-top-right">от 12 лет</span>
+        <span class="services-top-right">от {{ content.age.number }} лет</span>
       </div>
       <h4 class="services-item-title">
-        figma
+        {{ content.title }}
       </h4>
       <p class="services-item-text">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+        {{ content.description }}
       </p>
       <nuxt-link
         tag="button"
-        to="/programs/"
+        :to="'/программы/'+content.title"
         class="btn btn__services btn__services__1 rounded-3xl"
       >
         Подробнее
@@ -27,6 +27,8 @@
 <script>
 import '../assets/precss/components/course-card.pcss'
 export default {
+  /* eslint-disable vue/require-prop-types */
+  props: ['content'],
   mounted () {
     const cards = document.querySelectorAll('.services-item-persp')
     for (let i = 0; i < cards.length; i++) {
@@ -51,6 +53,5 @@ export default {
       cardItem.style.transform = 'rotate(0)'
     }
   }
-
 }
 </script>

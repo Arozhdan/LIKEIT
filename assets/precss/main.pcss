@@ -34,12 +34,24 @@ img {
 }
 
 .button--secondary {
-  @apply py-3 px-10 rounded-3xl font-bold text-white whitespace-nowrap;
+  @apply py-3 px-10 rounded-3xl font-normal text-white whitespace-nowrap;
   background-color: #57cbe2;
 }
 .button--green {
   @apply block text-white w-72 rounded-3xl py-4 px-6 font-bold;
   background: linear-gradient(45deg, #44a85f 0%, #48d16e 100%);
+}
+.tag {
+  @apply text-white py-1 px-5 rounded-3xl uppercase;
+  background: linear-gradient(
+    180deg,
+    #fe8a6b -23%,
+    #fc7b58 38.5%,
+    #ec5d36 100%
+  );
+  &--blue {
+    background: linear-gradient(225deg, #69d2e7 0%, #1cb3d1 100%);
+  }
 }
 
 .underline-link {
@@ -53,7 +65,7 @@ img {
     width: 100%;
     height: 2px;
     background-color: $orange;
-    bottom: 2px;
+    bottom: 0px;
     left: 0%;
     transform: translateX(-101%);
     transition: transform 0.3s linear;
@@ -69,13 +81,16 @@ img {
 }
 
 .section-title {
-  @apply text-5xl text-center capitalize text-gray-900 font-semibold mb-5;
+  @apply text-center capitalize text-gray-900 font-semibold mb-5;
+  font-size: 40px;
+  line-height: 55px;
 }
 .section-subtitle {
-  @apply text-center text-gray-700 text-xl;
+  @apply text-center text-gray-700 text-lg font-light;
   max-width: 850px;
   display: block;
   margin: 0 auto;
 }
-.section-subtitle {
+.reserve-from {
+  width: 37%;
 }

@@ -1,4 +1,3 @@
 import Vue from 'vue'
-import VueGallery from 'vue-gallery'
-
-Vue.component('VueGallery', VueGallery)
+import FsLightbox from 'fslightbox-vue'
+Vue.component('FsLightbox', FsLightbox)

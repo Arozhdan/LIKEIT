@@ -10,13 +10,13 @@
     background-repeat: no-repeat;
   }
   &__subtitle {
-    @apply uppercase text-white text-sm opacity-80 tracking-wider;
+    @apply uppercase text-white text-sm font-light opacity-80 tracking-wider;
   }
   &__title {
-    @apply capitalize text-5xl text-white font-bold mt-6 leading-tight;
+    @apply text-6xl text-white font-semibold mt-6 leading-tight tracking-normal mb-8 capitalize;
   }
   &__suptitle {
-    @apply text-white text-xl mt-3 opacity-90 tracking-wide;
+    @apply text-white text-xl mt-3 font-light opacity-90 tracking-wide;
   }
   &__links {
     @apply text-white opacity-90 text-xl mt-28 tracking-wide;
@@ -157,6 +157,9 @@
 }
 .teacher-card {
   width: 30%;
+}
+.teacher-card:hover{
+  transform:scale(1.05);
 }
 .teachers-stat {
   background: linear-gradient(225deg, #60cfe6 0%, #19adcb 100%);

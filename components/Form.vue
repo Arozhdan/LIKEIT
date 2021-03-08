@@ -2,7 +2,7 @@
 <template>
   <div class="reserve py-32">
     <div class="container flex items-center justify-center">
-      <div class="w-4/12">
+      <div class="reserve-from">
         <!-- eslint-disable-next-line vue/require-component-is -->
         <component is="script" data-b24-form="inline/9/yhuw9v" data-skip-moving="true">
           (function (w, d, u) {
@@ -47,6 +47,9 @@ export default {
 .b24-form-wrapper {
   border-radius: 10px;
 }
+.b24-form-wrapper.b24-form-shadow{
+  box-shadow: 0px 4px 14px -1px rgba(0,0,0,0.16) !important;
+}
 .b24-form-sign {
   display: none;
 }
@@ -73,15 +76,24 @@ export default {
   font-size: 8px !important;
 }
 .b24-form-control-alert-message {
-  border-radius: 0 7px 6px 7px;
-  padding: 4px 6px 4px 22px;
+  border-radius: 4px !important;
+  padding: 5px 8px 5px 30px !important;
   font-size: 12px;
   font-family: "Poppins", sans-serif !important;
   color: #fff;
+  &::after{
+    display: none !important;
+  }
+   &::before{
+    left: 8px !important;
+    top:50% !important;
+    transform: translateY(-50%);
+  }
 }
 .b24-form-btn {
   border-radius: 25px !important;
   background: linear-gradient(225deg, #69d2e7 0%, #1cb3d1 100%);
+  font-family: "Poppins", sans-serif !important;
 }
 .b24-form-header {
   padding: 40px 31px 5px !important;

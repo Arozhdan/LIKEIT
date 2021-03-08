@@ -1,13 +1,11 @@
 $orange: #fb6138;
 $gray: #444444;
 
-
 /* TODO: HOVER BUG 
 ANCHOR  */
 
-
 .nav__link {
-  @apply font-semibold text-white block cursor-pointer whitespace-nowrap capitalize;
+  @apply font-medium text-white block cursor-pointer whitespace-nowrap capitalize;
 }
 .nav__link--programs {
   position: relative;
@@ -32,7 +30,7 @@ ANCHOR  */
   color: $orange;
   padding: 10px 15px 5px;
   margin: -10px -15px -5px 35px;
-  transform:translateX(-15px);
+  transform: translateX(-15px);
   .nav__link__popup {
     visibility: visible;
     opacity: 1;
@@ -55,36 +53,51 @@ ANCHOR  */
   background-color: #fff;
   border-radius: 25px;
   border-top-left-radius: 0;
-  &:hover{
+  &:hover {
     visibility: visible;
     opacity: 1;
     z-index: 10;
   }
-  &__group:nth-of-type(n+3){
-      margin-top: 32px;
+  &__group:nth-of-type(n + 3) {
+    margin-top: 32px;
   }
-  &__title{
-      color: $gray;
-      opacity: 0.85;
-      font-size: 12px;
+  &__title {
+    color: $gray;
+    opacity: 0.85;
+    font-size: 12px;
   }
-  &__title:hover{
+  &__title:hover {
     color: $orange;
   }
-  &__courses{
-      margin-top: 16px;
-      padding-left: 30px;
-      font-size: 12px;
-      color: #000;
+  &__courses {
+    margin-top: 16px;
+    padding-left: 30px;
+    font-size: 12px;
+    color: #000;
   }
-  &__course{
-      transition:all 0.3s ease;
-      font-weight: normal;
+  &__course {
+    transition: all 0.3s ease;
+    font-weight: normal;
   }
-  &__course:hover{
-      opacity: 0.4;
+  &__course:hover {
+    opacity: 0.4;
   }
   &__course + &__course {
     margin-top: 10px;
+  }
+}
+.nav__link.nuxt-link-exact-active {
+  color: $orange;
+}
+
+.course-nav {
+  .nav__link {
+    @apply text-gray-900;
+  }
+  .nav__link--programs::before {
+    filter: brightness(0.2);
+  }
+  .nav__link__popup , .nav__link--programs:hover{
+    @apply bg-gray-50;
   }
 }

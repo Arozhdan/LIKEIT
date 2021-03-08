@@ -1,13 +1,14 @@
 <template>
-  <div class="nav container py-5 h-20 flex justify-between items-center">
-    <div class="logo h-10 w-36">
-      <img src="../assets/images/logo.svg" alt="likeit school logo">
-    </div>
+  <div class="nav container py-5 h-20 flex justify-between items-center" :class="{'course-nav':navProg}">
+    <nuxt-link to="/" class="logo h-10 w-36">
+      <img v-if="!navProg" src="../assets/images/logo.svg" alt="likeit school logo">
+      <img v-else src="../assets/images/icons/logo--black.svg" alt="likeit school logo">
+    </nuxt-link>
     <div class="nav__right flex">
       <div class="nav__links flex mr-11">
-        <div class="nav__link underline-link">
+        <nuxt-link to="/" class="nav__link underline-link">
           Главная
-        </div>
+        </nuxt-link>
         <div class="nav__link underline-link">
           О нас
         </div>
@@ -98,6 +99,11 @@ import '../assets/precss/components/nav.pcss'
 import { gsap } from 'gsap/dist/gsap.js'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 export default {
+  computed: {
+    navProg () {
+      return this.$route.name === 'программы-course'
+    }
+  },
   mounted () {
     gsap.registerPlugin(ScrollTrigger)
     this.navLinks()

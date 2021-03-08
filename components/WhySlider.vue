@@ -17,7 +17,7 @@
             {{ item.cons_title }}
           </h4>
           <p
-            class="text-center  text-lg text-gray-900 font-semibold mt-5 px-10"
+            class="text-center  text-lg text-gray-900 font-light mt-5 px-10"
           >
             Тут нужно что-нибудь классное написать побольше о том. что за
             ступени отбора такие.
@@ -36,7 +36,7 @@
           >
             5 ступеней отбора Кадров
           </h4>
-          <p class="text-center  text-lg text-white font-semibold mt-5 px-10">
+          <p class="text-center  text-lg text-white font-light mt-5 px-10">
             Тут нужно что-нибудь классное написать побольше о том. что за
             ступени отбора такие.
           </p>

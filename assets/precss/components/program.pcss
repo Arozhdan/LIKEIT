@@ -1,0 +1,42 @@
+.program {
+  &__chapter-title {
+    display: block;
+    margin: 0 -64.5px;
+    padding: 22px 64px 22px 109px;
+    background: linear-gradient(
+      270deg,
+      rgba(189, 128, 225, 0) 0%,
+      rgba(189, 128, 225, 0.2) 100%
+    );
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #232323;
+    position: relative;
+    &::before {
+      position: absolute;
+      display: block;
+      content: "";
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      background: #9d87c3;
+      left: 64px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  &__lessons-wrapper {
+    margin: 30px 0;
+  }
+  &__lesson {
+    display: grid;
+    grid-template-columns: 8fr 2fr 4fr 3fr;
+  }
+  &__lesson + &__lesson {
+    margin-top: 26px;
+  }
+  &__lessons-wrapper.not-visible {
+    display: none;
+  }
+}
