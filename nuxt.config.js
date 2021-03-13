@@ -1,6 +1,6 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
-
+  loading: '~/components/Loading.vue',
   head: {
     title: 'LikeIT',
     htmlAttrs: {
@@ -31,9 +31,11 @@ export default {
   plugins: [
     '~filters/nl2br.js',
     { src: '~/plugins/vue-gallery.js', ssr: false },
-    { src: '~/plugins/vue-scroll.js', ssr: false },
     { src: '~/plugins/slider.js', ssr: false },
-    { src: '~/plugins/vuelidate.js' }
+    { src: '~/plugins/vuelidate.js' },
+    { src: '~/plugins/locomotive.js', mode: 'client' },
+    { src: '~/plugins/scroll.js' },
+    { src: '~/plugins/locomotiveServer.js', mode: 'server' }
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

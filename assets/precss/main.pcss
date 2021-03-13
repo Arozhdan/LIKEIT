@@ -4,7 +4,6 @@ button:focus {
 }
 body {
   font-family: "Poppins", sans-serif;
-  overflow-x: hidden;
 }
 img {
   display: block;
@@ -13,6 +12,7 @@ img {
 }
 
 .button {
+  border-radius: 45px;
   transition: all 0.3s ease;
   &:hover {
     cursor: pointer;
@@ -20,7 +20,7 @@ img {
   }
 }
 .button__primary {
-  @apply py-3 px-7 rounded-3xl font-bold text-white whitespace-nowrap;
+  @apply py-3 px-9 font-bold text-white whitespace-nowrap;
   transition: all 0.4s ease 0s;
   background: linear-gradient(
     90deg,
@@ -29,7 +29,7 @@ img {
     #ec5d36 98.55%
   );
   &--bigger {
-    padding: 15px 40px;
+    padding: 12px 55px;
   }
 }
 
@@ -49,9 +49,7 @@ img {
     #fc7b58 38.5%,
     #ec5d36 100%
   );
-  &--blue {
-    background: linear-gradient(225deg, #69d2e7 0%, #1cb3d1 100%);
-  }
+
 }
 
 .underline-link {

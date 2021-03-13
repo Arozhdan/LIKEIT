@@ -35,55 +35,35 @@
           </div>
         </div>
       </div>
-      <div class="footer__center">
-        <span class="block mb-10 text-white font-semibold text-lg">Программы</span>
-        <div class="mt-10 flex text-white justify-between flex-wrap">
-          <ul class="list-disc w-5/12">
-            <span class="block mb-4 opacity-60 font-semibold">Программирование</span>
-            <li class="ml-7">
+      <div class="footer__center  flex flex-col justify-between h-full">
+        <div class="text-white">
+          <span class="block mb-3 text-white font-semibold text-lg">Программы</span>
+          <ul class="list-disc flex flex-col max-h-52 flex-wrap">
+            <li class="ml-7 font-light">
               Разработка сайтов
             </li>
-            <li class="ml-7">
+            <li class="ml-7 font-light">
               Python
             </li>
-            <li class="ml-7">
+            <li class="ml-7 font-light">
+              Графический дизайн
+            </li>
+            <li class="ml-7 font-light">
               Java
+            </li>
+            <li class="ml-7 font-light">
+              Игры на Scratch
             </li>
           </ul>
-          <ul class="list-disc w-5/12">
-            <span class="block mb-4 opacity-60 font-semibold">Дизайн</span>
-            <li class="ml-7">
-              Дизайн
+        </div>
+        <div class="mt-10 text-white">
+          <span class="block mb-3 text-white font-semibold text-lg">Полезные ссылки</span>
+          <ul class="list-disc ">
+            <li class="ml-7 font-light">
+              Как оплатить занятия
             </li>
-            <li class="ml-7">
-              Python
-            </li>
-            <li class="ml-7">
-              Java
-            </li>
-          </ul>
-          <ul class="list-disc w-5/12">
-            <span class="block mb-4 opacity-60 font-semibold">Дизайн</span>
-            <li class="ml-7">
-              Дизайн
-            </li>
-            <li class="ml-7">
-              Python
-            </li>
-            <li class="ml-7">
-              Java
-            </li>
-          </ul>
-          <ul class="list-disc w-5/12">
-            <span class="block mb-4 opacity-60 font-semibold">Дизайн</span>
-            <li class="ml-7">
-              Дизайн
-            </li>
-            <li class="ml-7">
-              Python
-            </li>
-            <li class="ml-7">
-              Java
+            <li class="ml-7 font-light">
+              Памятка для первого урока
             </li>
           </ul>
         </div>

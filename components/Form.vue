@@ -1,104 +1,96 @@
 /* eslint-disable no-undef */
 <template>
-  <div class="reserve py-32">
-    <div class="container flex items-center justify-center">
-      <div class="reserve-from">
-        <!-- eslint-disable-next-line vue/require-component-is -->
-        <component is="script" data-b24-form="inline/9/yhuw9v" data-skip-moving="true">
-          (function (w, d, u) {
-          const s = d.createElement('script')
-          s.async = true
-          s.src = u + '?' + ((Date.now() / 180000) | 0)
-          const h = d.getElementsByTagName('script')[0]
-          h.parentNode.insertBefore(s, h)
-          })(
-          window,
-          document,
-          'https://cdn-ru.bitrix24.ru/b16923550/crm/form/loader_9.js'
-          )
-        </component>
-      </div>
-      <div class="w-4/12 ml-16">
-        <div class="text-3xl font-semibold mb-6">
-          Остались вопросы?
-        </div>
-        <div class="more-qestions">
-          <div class="text-lg font-semibold mb-7">
-            Оставьте заявку
-          </div>
-          <div class="mb-6">
-            Наш менеджер позвонит Вам с 9:00 до 21:00 по МСК или на следующий
-            день, если заявка отправлена в ночное время
-          </div>
-          <div>
-            Менеджер ответит на все Ваши вопросы, ппожберет оптимальный план
-            обучения и назначит вводное занятие
-          </div>
-        </div>
-      </div>
+  <form
+    class="form form--contacts bg-white rounded-xl py-11 px-10 w-10/12"
+  >
+    <div class="text-center text-gray-900 font-semibold text-lg mb-8">
+      Заполните форму, и мы свяжемся
+      с Вами в ближайшее время
     </div>
-  </div>
+    <label>
+      <span class="hidden"> Имя и возраст ребенка</span>
+      <input
+        v-model="$v.childName.$model"
+        class="py-4 px-6 border border-gray-400 text-gray-700 w-full rounded"
+        placeholder="Возраст и Имя ребенка"
+        type="text"
+        :class="status($v.childName)"
+      >
+    </label>
+    <label
+      class="
+            mt-5
+            block"
+    >
+      <span class="hidden"> Телефон родителя</span>
+      <input
+        v-model="$v.phone.$model"
+        class="py-4 px-6 border border-gray-400 text-gray-700 w-full rounded"
+        placeholder="Телефон родителя"
+        type="tel"
+        :class="status($v.phone)"
+      >
+    </label>
+    <label class="mt-5 block">
+      <span class="hidden"> Имя и Отчество родителя</span>
+      <input
+        v-model="$v.parentName.$model"
+        class="py-4 px-6 border border-gray-400 text-gray-700 w-full rounded"
+        placeholder="Имя и Отчество родителя"
+        type="text"
+        :class="status($v.parentName)"
+      >
+    </label>
+    <CustomCheckbox
+      class="mt-4 mb-7"
+      :status="termsError"
+      @switched="toggleAgree"
+    />
+    <button class="contacts-btn w-full">
+      Отправить
+    </button>
+  </form>
 </template>
 <script>
+import { required, minLength, alpha } from 'vuelidate/lib/validators'
+import CustomCheckbox from './CustomCheckbox.vue'
 export default {
+  components: { CustomCheckbox },
+  data () {
+    return {
+      termsAgreed: false,
+      termsError: false,
+      childName: null,
+      parentName: null,
+      phone: null
+    }
+  },
+  validations: {
+    childName: {
+      required,
+      minLength: minLength(2)
+    },
+    parentName: {
+      alpha,
+      required,
+      minLength: minLength(2)
+    },
+    phone: {
+      required,
+      minLength: minLength(6)
+    }
+  },
+  methods: {
+    toggleAgree () {
+      this.termsAgreed = !this.termsAgreed
+      this.termsError = false
+    },
+    status (validation) {
+      return {
+        error: validation.$error,
+        dirty: validation.$dirty
+      }
+    }
+  }
 }
 </script>
-<style lang="postcss">
-.b24-form-wrapper {
-  border-radius: 10px;
-}
-.b24-form-wrapper.b24-form-shadow{
-  box-shadow: 0px 4px 14px -1px rgba(0,0,0,0.16) !important;
-}
-.b24-form-sign {
-  display: none;
-}
-.b24-form-wrapper.b24-form-border-bottom,
-.b24-form-header {
-  border-bottom: unset !important;
-}
-.b24-form-header-title,
-.b24-form-field-agreement-link,
-.b24-form-header-description,
-.b24-form-control,
-.b24-form-control-label,
-.b24-form-control-alert-message,
-.b24-form-success-text p {
-  font-family: "Poppins", sans-serif !important;
-}
-.b24-form-control {
-  background-color: #fff !important;
-  resize: none !important;
-}
-.b24-form-control-select-label,
-.b24-form-control:focus + .b24-form-control-label,
-.b24-form-control-not-empty + .b24-form-control-label {
-  font-size: 8px !important;
-}
-.b24-form-control-alert-message {
-  border-radius: 4px !important;
-  padding: 5px 8px 5px 30px !important;
-  font-size: 12px;
-  font-family: "Poppins", sans-serif !important;
-  color: #fff;
-  &::after{
-    display: none !important;
-  }
-   &::before{
-    left: 8px !important;
-    top:50% !important;
-    transform: translateY(-50%);
-  }
-}
-.b24-form-btn {
-  border-radius: 25px !important;
-  background: linear-gradient(225deg, #69d2e7 0%, #1cb3d1 100%);
-  font-family: "Poppins", sans-serif !important;
-}
-.b24-form-header {
-  padding: 40px 31px 5px !important;
-}
-.b24-form-content {
-  padding: 14px 31px 40px !important;
-}
-</style>

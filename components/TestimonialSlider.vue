@@ -1,8 +1,8 @@
 <template>
   <Splide
+    ref="splide"
     :options="testimonialOptions"
     class="testimonials-slider mt-24 mb-12"
-    @splide:mounted="onMounted"
   >
     <SplideSlide
       v-for="testimonial in testimonials"
@@ -19,7 +19,7 @@
           </div>
           <img src="" alt="">
         </div>
-        <div class="text-red-400">
+        <div style="color: #65CBE0">
           {{ published(testimonial.publication_day||testimonial.published_at) }}
           {{ dayEnding(published(testimonial.publication_day||testimonial.published_at)) }} назад
         </div>
@@ -30,12 +30,15 @@
       <div class="flex items-center justify-between">
         <div class="flex items-center">
           <div class="w-12 h-12 mr-3 rounded-full overflow-hidden">
-            <img v-if="testimonial.avatar.url" :src="api_url+testimonial.avatar.url" alt="">
+            <img v-if="testimonial.avatar" :src="api_url+testimonial.avatar.url" alt="">
             <img v-else src="../assets/images/icons/anonim.svg" alt="">
           </div>
           <div class="font-semibold text-gray-900">
             {{ testimonial.name }}
           </div>
+        </div>
+        <div class="w-8 h-8">
+          <a href="#"><img src="../assets/images/icons/vk-light.svg" alt=""></a>
         </div>
       </div>
     </SplideSlide>
@@ -60,19 +63,15 @@ export default {
       }
     }
   },
-  async beforeMount () {
+  async mounted () {
     try {
       this.testimonials = await this.$strapi.$testimonials.find()
+      this.$refs.splide.remount()
     } catch (error) {
       this.error = error
     }
   },
   methods: {
-    onMounted (splide) {
-      setTimeout(() => {
-        splide.refresh()
-      }, 1000)
-    },
     stars (num) {
       return Math.floor(num)
     },
@@ -94,7 +93,7 @@ export default {
       num = num + ''
       if (+num === 1) { return 'день' }
       if (num[num.length - 1] === '1' && +num > 19) { return 'день' }
-      if (+num[num.length - 1] > 1 && +num[num.length - 1] < 5) { return 'дня' }
+      if (+num[num.length - 1] > 1 && +num[num.length - 1] < 5 && +num > 19) { return 'дня' }
       return 'дней'
     }
   }

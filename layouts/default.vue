@@ -1,27 +1,19 @@
 <template>
   <div>
-    <!-- <VueCustomScrollbar class="scroll-area" :settings="settings"> -->
     <Navbar />
     <Nuxt />
-    <!-- </VueCustomScrollbar> -->
+    <Footer />
   </div>
 </template>
 <script>
-import 'vue-custom-scrollbar/dist/vueScrollbar.css'
 import Navbar from '../components/Navbar.vue'
+import Footer from '~/components/Footer'
+import 'vue-custom-scrollbar/dist/vueScrollbar.css'
 export default {
-  components: { Navbar },
-  data () {
-    return {
-      settings: {
-        suppressScrollX: false,
-        wheelSpeed: 0.6,
-        swipeEasing: true,
-        wheelPropagation: true
-
-      }
-    }
-  },
+  components: { Navbar, Footer },
+  data: () => ({
+    color: ''
+  }),
   mounted () {
     (function (w, d, u) {
       const s = d.createElement('script'); s.async = true; s.src = u + '?' + (Date.now() / 60000 | 0)

@@ -1,17 +1,10 @@
 <template>
   <div class="nav container py-5 h-20 flex justify-between items-center" :class="{'course-nav':navProg}">
-    <nuxt-link to="/" class="logo h-10 w-36">
-      <img v-if="!navProg" src="../assets/images/logo.svg" alt="likeit school logo">
-      <img v-else src="../assets/images/icons/logo--black.svg" alt="likeit school logo">
+    <nuxt-link :to="{name:'index'}" class="logo h-10 w-36">
+      <img src="../assets/images/logo.svg" alt="likeIT school logo">
     </nuxt-link>
     <div class="nav__right flex">
-      <div class="nav__links flex mr-11">
-        <nuxt-link to="/" class="nav__link underline-link">
-          Главная
-        </nuxt-link>
-        <div class="nav__link underline-link">
-          О нас
-        </div>
+      <div v-if="!navProg" class="nav__links flex mr-11">
         <div class="nav__link nav__link--programs">
           Программы
           <div class="nav__link__popup flex justify-between flex-wrap">
@@ -73,9 +66,7 @@
             </div>
           </div>
         </div>
-        <div class="nav__link underline-link">
-          Тарифы
-        </div>
+
         <div class="nav__link underline-link">
           Отзывы
         </div>
@@ -86,8 +77,19 @@
           Контакты
         </div>
       </div>
+      <div v-else class="nav__links flex mr-11">
+        <nuxt-link to="/" class="nav__link underline-link">
+          Чему научим
+        </nuxt-link>
+        <div class="nav__link underline-link">
+          Программа курса
+        </div>
+        <div class="nav__link nav__link--start underline-link">
+          Начать учиться
+        </div>
+      </div>
       <div class="nav__button">
-        <a href="#" class="button button__primary">
+        <a href="tel:420776077103" class="button button__primary  contact-btn" :class="'contact-btn--'+ contactBtnColor">
           +7 (961) 204 36 09
         </a>
       </div>
@@ -102,6 +104,12 @@ export default {
   computed: {
     navProg () {
       return this.$route.name === 'программы-course'
+    },
+    contactBtnColor () {
+      if (this.$store.getters['color/getColor']) {
+        return this.$store.getters['color/getColor']
+      }
+      return ''
     }
   },
   mounted () {
