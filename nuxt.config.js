@@ -53,7 +53,7 @@ export default {
     '@nuxtjs/strapi'
   ],
   strapi: {
-    entities: ['homepage', 'courses', 'categories', 'ages', 'testimonials', 'prices', 'site-settings', 'leads'],
+    entities: ['homepage', 'courses', 'categories', 'ages', 'testimonials', 'prices', 'site-settings', 'leads', 'howtopay'],
     url: 'https://school.likeit.website'
   },
   // Build Configuration: https://go.nuxtjs.dev/config-build

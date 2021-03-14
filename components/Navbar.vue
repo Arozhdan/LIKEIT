@@ -1,7 +1,8 @@
 <template>
-  <div class="nav container py-5 h-20 flex justify-between items-center" :class="{'course-nav':navProg}">
+  <div class="nav container py-5 h-20 flex justify-between items-center" :class="{'course-nav':navProg, 'dark-nav': darkNav}">
     <nuxt-link :to="{name:'index'}" class="logo h-10 w-36">
-      <img src="../assets/images/logo.svg" alt="likeIT school logo">
+      <img v-if="!darkNav" src="../assets/images/logo.svg" alt="likeIT school logo">
+      <img v-else src="../assets/images/icons/logo--black.svg" alt="likeIT school logo">
     </nuxt-link>
     <div class="nav__right flex">
       <div v-if="!navProg" class="nav__links flex mr-11">
@@ -81,9 +82,9 @@
                 <span class="block ml-1">Полезные ссылки</span>
               </div>
               <div class="nav__link__popup__courses">
-                <div class="nav__link__popup__course">
+                <nuxt-link to="/howtopay" class="nav__link__popup__course">
                   Как оплатить занятия
-                </div>
+                </nuxt-link>
                 <div class="nav__link__popup__course">
                   Памятка для первого урока
                 </div>
@@ -119,6 +120,9 @@ export default {
   computed: {
     navProg () {
       return this.$route.name === 'программы-course'
+    },
+    darkNav () {
+      return this.$route.name === 'howtopay'
     },
     contactBtnColor () {
       if (this.$store.getters['color/getColor']) {
