@@ -19,10 +19,7 @@
             <div class=" inline-block py-1 px-5 text-white font-semibold howtopay__body__tag mr-5">
               ВАЖНО
             </div>
-            <p class="howtopay__body__important-text" :inner-html.prop="item.important_text | nl2br">
-              При покупке любого пакета занятий,
-              Вы получаете скидку 100% на вводный урок.
-            </p>
+            <p class="howtopay__body__important-text" :inner-html.prop="item.important_text | nl2br" />
           </div>
         </div>
         <div class="w-6/12">

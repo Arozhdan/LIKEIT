@@ -1,0 +1,89 @@
+.start-page {
+  background-color: #FFFBFC;
+}
+
+.before-lesson__item + .before-lesson__item {
+  margin-top: 50px;
+}
+
+.start-instructions__switcher__item {
+  font-size: 26px;
+  line-height: 34px;
+  letter-spacing: 0.02em;
+  color: #555555;
+  cursor: pointer;
+  user-select: none;
+
+  &--selected {
+    color: #232323;
+    font-weight: 600;
+  }
+}
+
+.start-instructions__switcher__item + .start-instructions__switcher__item {
+  margin-left: 30px;
+}
+
+.start__item:nth-child(even) .start__item__inner {
+  flex-direction: row-reverse;
+}
+
+.start__btn {
+  padding: 6px 33px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 28px;
+  text-align: right;
+  color: #FFFFFF;
+  background: linear-gradient(248.11deg, #917AB8 1.97%, #7760A2 100%);
+  border-radius: 25px;
+}
+.start__item__img{
+  border-radius: 10px;
+  margin: 0 auto;
+}
+.start__item__additional {
+  position: relative;
+  flex-direction: row-reverse;
+
+  + .start__item__additional {
+    margin-top: 170px;
+  }
+
+  &:nth-child(even) {
+    flex-direction: row;
+  }
+
+  &__num {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 28px;
+    background: #7B64A5;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #FFFFFF;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+.start-instructions__switcher__item-wrapper{
+  position: relative;
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 2px;
+    height: 77%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: url('../../images/icons/horiz-line.svg') ;
+    background-repeat: repeat-y;
+  }
+}
