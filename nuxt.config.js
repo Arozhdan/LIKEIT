@@ -1,5 +1,8 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
+  server: {
+    port: 5213, 
+  },
   loading: '~/components/Loading.vue',
   head: {
     title: 'LikeIT',
