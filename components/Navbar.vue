@@ -66,15 +66,30 @@
             </div>
           </div>
         </div>
-
         <div class="nav__link underline-link">
           Отзывы
         </div>
         <div class="nav__link underline-link">
           FAQ
         </div>
-        <div class="nav__link underline-link">
-          Контакты
+        <div class="nav__link nav__link--programs">
+          Перед уроком
+          <div class="nav__link__popup nav__link__popup--tiny flex justify-between flex-wrap">
+            <div class="nav__link__popup__group">
+              <div class="nav__link__popup__title flex">
+                <img src="../assets/images/icons/vector.svg" alt="design">
+                <span class="block ml-1">Полезные ссылки</span>
+              </div>
+              <div class="nav__link__popup__courses">
+                <div class="nav__link__popup__course">
+                  Как оплатить занятия
+                </div>
+                <div class="nav__link__popup__course">
+                  Памятка для первого урока
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
       <div v-else class="nav__links flex mr-11">

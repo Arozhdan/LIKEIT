@@ -5,11 +5,10 @@
         <div class="homepage-header mt-28 mb-36 container flex">
           <div class="homepage-header__left w-9/12">
             <h1 class="homepage-header__title">
-              Детская онлайн-школа
-              информационных технологий
+              {{ homepage.page_title }}
             </h1>
             <p class="homepage-header__suptitle w-5/12">
-              Пусть Ваш ребенок проведет время с пользой и освоит профессии будущего!
+              {{ homepage.page_subtitle }}
             </p>
             <button
               class="button button__primary button__primary--bigger text-xl mt-9"
@@ -132,7 +131,7 @@
           </div>
         </div>
       </div>
-      <div class="teachers py-24">
+      <div class="teachers pt-24">
         <h2 class="section-title">
           Преподаватели
         </h2>
@@ -168,51 +167,13 @@
               class="w-1/4"
             >
               <div class="text-white text-center font-semibold text-5xl">
-                {{ stat.number }}
+                {{ stat.data }}
               </div>
-              <p class="text-center mt-2 text-white text-lg">
+              <p class="text-center mt-3 w-7/12 mx-auto text-white text-lg">
                 {{ stat.item }}
               </p>
             </div>
           </div>
-        </div>
-        <div class="slider pt-24 pb-12">
-          <div class="container">
-            <div class="py-11 bg-white shadow rounded-t-2xl">
-              <h3
-                class="slider__title text-center font-semibold text-2xl text-gray-900 capitalize"
-              >
-                Почему выбирают LikeIT school?
-              </h3>
-            </div>
-            <WhySlider />
-            <div class="flex justify-center mt-14">
-              <div class="button button__primary button__primary--bigger">
-                Начать учиться
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="pricing">
-        <div class="container">
-          <h2 class="font-semibold text-gray-900 text-4xl ml-16">
-            Выберите подходящий План Занятий
-          </h2>
-          <div class="pricing-cards mt-20 pb-28 flex justify-between">
-            <PriceCard v-for="i in prices" :key="i.id" :content="i" />
-          </div>
-        </div>
-      </div>
-      <div class="testimonials py-14">
-        <div class="container">
-          <h2 class="section-title">
-            Отзывы
-          </h2>
-          <p class="section-subtitle">
-            Те самые люди, которые позволяют нам быть теми, кем мы являемся!
-          </p>
-          <TestimonialSlider />
         </div>
       </div>
       <div class="callout py-28">
@@ -220,10 +181,9 @@
           <div class="w-1/2 px-16">
             <div class="text-white">
               <h3 class="text-5xl font-semibold capitalize leading-snug mb-6">
-                Хотите Начать <br>
-                Обучаться с Нами?
+                Начните свой путь <br>в LikeIT сегодня!
               </h3>
-              <div class="callout-list">
+              <div class="callout-list pr-14">
                 <div
                   v-for="i in 3"
                   :key="i"
@@ -236,26 +196,51 @@
             </div>
           </div>
           <div class="w-1/2 px-16">
-            <div class="px-10 py-12 bg-white rounded-lg">
-              <div class="w-32 h-32 mx-auto mb-6">
-                <img src="../assets/images/icons/callout-phone.svg" alt="phone">
+            <Form />
+          </div>
+        </div>
+        <div class="callout__bottom container mt-32">
+          <h2 class="text-center text-4xl text-white font-semibold tracking-wide mb-10 ">
+            Как это работает?
+          </h2>
+          <div class="flex justify-between w-10/12 mx-auto items-start">
+            <div class="w-1/4 flex flex-col items-center justify-center">
+              <div class="callout__bottom__num">
+                <span>1</span>
               </div>
-              <div class="px-5 mb-8">
-                <div
-                  class="text-center text-3xl text-gray-900 font-semibold mb-3"
-                >
-                  Начните свой путь в LikeIT уже сегодня!
-                </div>
-                <p class="text-lg text-center font-medium">
-                  Запишитесь на пробное занятие и дай своему ребенку возможность
-                  обучиться профессиям будущего.
-                </p>
+              <div class="mt-3 text-lg text-white">
+                Оставьте заявку
               </div>
-              <button class="callout-button">
-                Получить консультацию
-              </button>
+            </div>
+            <div class="w-1/4 flex flex-col items-center justify-center">
+              <div class="callout__bottom__num">
+                <span>2</span>
+              </div>
+              <div class="mt-3 text-lg text-white">
+                Наш менеджер позвонит Вам
+                с 9:00 до 21:00 по МСК или на следующий день, если заявка отправлена в ночное время
+              </div>
+            </div>
+            <div class="w-1/4 flex flex-col items-center justify-center">
+              <div class="callout__bottom__num">
+                <span>3</span>
+              </div>
+              <div class="mt-3 text-lg text-white">
+                Менеджер ответит на все Ваши вопросы, подберет оптимальный план обучения и назначит вводное занятие
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div class="testimonials py-14">
+        <div class="container">
+          <h2 class="section-title">
+            Отзывы
+          </h2>
+          <p class="section-subtitle">
+            Те самые люди, которые позволяют нам быть теми, кем мы являемся!
+          </p>
+          <TestimonialSlider />
         </div>
       </div>
       <div class="faq py-24">
@@ -275,7 +260,6 @@
           </div>
         </div>
       </div>
-      <Form />
     </div>
   </keep-alive>
 </template>
@@ -283,7 +267,6 @@
 import Form from '../components/Form.vue'
 import TestimonialSlider from '../components/TestimonialSlider.vue'
 import Collapse from '../components/Collapse.vue'
-import PriceCard from '../components/PriceCard.vue'
 import CourseCard from '../components/CourseCard.vue'
 import '@splidejs/splide/dist/css/themes/splide-default.min.css'
 import '../assets/precss/components/homepage.pcss'
@@ -292,7 +275,6 @@ import '../assets/precss/components/price.pcss'
 export default {
   components: {
     CourseCard,
-    PriceCard,
     Collapse,
     TestimonialSlider,
     Form
@@ -336,7 +318,7 @@ export default {
   },
   head () {
     return {
-      title: this.homepage.page_title || this.$store.getters.getSettings.Name,
+      title: this.homepage.seo ? this.homepage.seo.seo_title + ' | ' + this.$store.getters.getSettings.Name : this.$store.getters.getSettings.Name,
 
       meta: [
         {

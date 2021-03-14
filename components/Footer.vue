@@ -69,12 +69,11 @@
         </div>
       </div>
       <div class="footer__right h-full flex flex-col justify-between border-l-2 border-gray-400 border-solid pl-20">
-        <a href="#" class="text-white font-semibold text-lg">Главная</a>
-        <a href="#" class="text-white font-semibold text-lg">О нас</a>
-        <a href="#" class="text-white font-semibold text-lg">Блог</a>
-        <a href="#" class="text-white font-semibold text-lg">Тарифы</a>
-        <a href="#" class="text-white font-semibold text-lg">Отзывы</a>
-        <a href="#" class="text-white font-semibold text-lg">FAQ</a>
+        <a href="#" class="text-white font-semibold text-lg transition duration-300 hover:text-red-400">О нас</a>
+        <a href="#" class="text-white font-semibold text-lg transition duration-300 hover:text-red-400">Преподаватели</a>
+        <a href="#" class="text-white font-semibold text-lg transition duration-300 hover:text-red-400">Записаться</a>
+        <a href="#" class="text-white font-semibold text-lg transition duration-300 hover:text-red-400">Отзывы</a>
+        <a href="#" class="text-white font-semibold text-lg transition duration-300 hover:text-red-400">FAQ</a>
       </div>
     </div>
     <div class="footer__copy container flex mt-20 justify-between text-sm">

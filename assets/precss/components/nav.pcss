@@ -58,7 +58,9 @@ $gray: #444444;
   background-color: #fff;
   border-radius: 25px;
   border-top-left-radius: 0;
-
+  &--tiny{
+    width: auto;
+  }
   &:hover {
     visibility: visible;
     opacity: 1;
@@ -74,7 +76,9 @@ $gray: #444444;
     opacity: 0.85;
     font-size: 12px;
   }
-
+  &__title img{
+    filter: brightness(0.5);
+  }
   &__title:hover {
     color: $orange;
   }
