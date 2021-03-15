@@ -232,7 +232,7 @@
           </div>
         </div>
       </div>
-      <div class="testimonials py-14">
+      <div id="testimonials" class="testimonials py-14">
         <div class="container">
           <h2 class="section-title">
             Отзывы

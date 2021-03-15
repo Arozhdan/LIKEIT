@@ -68,9 +68,9 @@
               </div>
             </div>
           </div>
-          <div class="nav__link underline-link">
+          <nuxt-link :to="{path:'/', hash:'#testimonials'}" class="nav__link underline-link">
             Отзывы
-          </div>
+          </nuxt-link>
           <div class="nav__link underline-link">
             FAQ
           </div>
@@ -124,7 +124,7 @@ export default {
       return this.$route.name === 'программы-course'
     },
     darkNav () {
-      return this.$route.name === 'howtopay' || this.$route.name === 'start'
+      return this.$route.name === 'howtopay' || this.$route.name === 'start' || this.$route.name === 'trial'
     },
     contactBtnColor () {
       if (this.$store.getters['color/getColor']) {
