@@ -54,7 +54,8 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/strapi'
+    '@nuxtjs/strapi',
+    'vue-scrollto/nuxt'
   ],
   strapi: {
     entities: ['homepage', 'courses', 'categories', 'ages', 'testimonials', 'prices', 'site-settings', 'leads', 'howtopay'],

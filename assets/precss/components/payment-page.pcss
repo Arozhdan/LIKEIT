@@ -1,0 +1,52 @@
+.payment-page {
+  background-color: #FFFBFC;
+}
+
+.payment-card {
+  border-radius: 10px;
+  width: 65%;
+
+  &__img {
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+  }
+
+  &__body {
+    max-width: 90%;
+  }
+}
+
+.payment-side {
+  width: 31%;
+  border-radius: 10px;
+  &__inner {
+    background: #FFF0EC;
+    border-radius: 20px;
+    padding: 46px 30px;
+  }
+}
+
+.promocode {
+  position: relative;
+  padding: 16px 30px;
+
+  &::placeholder {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-style: normal;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.02em;
+    color: #555555;
+  }
+}
+
+.copy-link{
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

@@ -2,6 +2,7 @@
 <template>
   <form
     class="form form--contacts bg-white rounded-xl py-11 px-10 w-10/12"
+    @submit.prevent="submitForm"
   >
     <div class="text-center text-gray-900 font-semibold text-lg mb-8">
       Заполните форму, и мы свяжемся
@@ -53,7 +54,10 @@
 </template>
 <script>
 import { required, minLength, alpha } from 'vuelidate/lib/validators'
+// import Bitrix from '@2bad/bitrix'
 import CustomCheckbox from './CustomCheckbox.vue'
+// const bitrix = Bitrix('https://PORTAL_NAME.bitrix24.ru/rest', 'ACCESS_TOKEN')
+
 export default {
   components: { CustomCheckbox },
   data () {
@@ -90,6 +94,9 @@ export default {
         error: validation.$error,
         dirty: validation.$dirty
       }
+    },
+    submitForm () {
+
     }
   }
 }

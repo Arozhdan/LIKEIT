@@ -6,7 +6,23 @@
         <img v-else src="../assets/images/icons/logo--black.svg" alt="likeIT school logo">
       </nuxt-link>
       <div class="nav__right flex">
-        <div v-if="!navProg" class="nav__links flex mr-11">
+        <div v-if="navProg" class="nav__links flex mr-11">
+          <nuxt-link to="/" class="nav__link underline-link">
+            Чему научим
+          </nuxt-link>
+          <div class="nav__link underline-link">
+            Программа курса
+          </div>
+          <div class="nav__link nav__link--start underline-link">
+            Начать учиться
+          </div>
+        </div>
+        <div v-else-if="navPay" class="nav__links nav__links--pay flex mr-11">
+          <div class="nav__link nav__link--pay " @click="$router.go(-1)">
+            ←  Назад
+          </div>
+        </div>
+        <div v-else class="nav__links flex mr-11">
           <div class="nav__link nav__link--programs">
             Программы
             <div class="nav__link__popup flex justify-between flex-wrap">
@@ -68,12 +84,18 @@
               </div>
             </div>
           </div>
-          <nuxt-link :to="{path:'/', hash:'#testimonials'}" class="nav__link underline-link">
+          <a v-if="$route.name==='index'" v-scroll-to="'#testimonials'" href="/" class="nav__link underline-link">
+            Отзывы
+          </a>
+          <nuxt-link v-else :to="{path:'/', hash:'#testimonials'}" class="nav__link underline-link">
             Отзывы
           </nuxt-link>
-          <div class="nav__link underline-link">
+          <a v-if="$route.name==='index'" v-scroll-to="'#faq'" href="/" class="nav__link underline-link">
             FAQ
-          </div>
+          </a>
+          <nuxt-link v-else :to="{path:'/', hash:'#faq'}" class="nav__link underline-link">
+            FAQ
+          </nuxt-link>
           <div class="nav__link nav__link--programs">
             Перед уроком
             <div class="nav__link__popup nav__link__popup--tiny flex justify-between flex-wrap">
@@ -94,18 +116,7 @@
             </div>
           </div>
         </div>
-        <div v-else class="nav__links flex mr-11">
-          <nuxt-link to="/" class="nav__link underline-link">
-            Чему научим
-          </nuxt-link>
-          <div class="nav__link underline-link">
-            Программа курса
-          </div>
-          <div class="nav__link nav__link--start underline-link">
-            Начать учиться
-          </div>
-        </div>
-        <div class="nav__button">
+        <div v-if="!navPay" class="nav__button">
           <a href="tel:420776077103" class="button button__primary  contact-btn" :class="'contact-btn--'+ contactBtnColor">
             +7 (961) 204 36 09
           </a>
@@ -120,11 +131,14 @@ import { gsap } from 'gsap/dist/gsap.js'
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger.js'
 export default {
   computed: {
+    navPay () {
+      return this.$route.name === 'trial-payment'
+    },
     navProg () {
       return this.$route.name === 'программы-course'
     },
     darkNav () {
-      return this.$route.name === 'howtopay' || this.$route.name === 'start' || this.$route.name === 'trial'
+      return this.$route.name === 'howtopay' || this.$route.name === 'start' || this.$route.name === 'trial' || this.$route.name === 'trial-payment'
     },
     contactBtnColor () {
       if (this.$store.getters['color/getColor']) {

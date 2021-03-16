@@ -22,7 +22,9 @@
         </div>
         <div class="flex justify-between mt-10 items-center">
           <div class="trial__btns flex items-center items-center">
-            <a href="#" class="trial__btn">Приобрести</a>
+            <nuxt-link to="/trial/payment" class="trial__btn">
+              Приобрести
+            </nuxt-link>
             <a href="#" class="trial__btn">Подробнее</a>
           </div>
           <div class="text-3xl font-semibold text-green-500 tracking-wide">

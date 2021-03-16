@@ -66,7 +66,9 @@ export default {
   async mounted () {
     try {
       this.testimonials = await this.$strapi.$testimonials.find()
-      this.$refs.splide.remount()
+      setTimeout(() => {
+        this.$refs.splide.remount()
+      }, 300)
     } catch (error) {
       this.error = error
     }

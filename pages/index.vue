@@ -243,7 +243,7 @@
           <TestimonialSlider />
         </div>
       </div>
-      <div class="faq py-24">
+      <div id="faq" class="faq py-24">
         <div class="container">
           <h2 class="section-title">
             Часто задаваемые вопросы
